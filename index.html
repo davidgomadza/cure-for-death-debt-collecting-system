@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cure For Death Debt Collection Log</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Orbitron:wght@400;700&display=swap');
+
+        :root {
+            --bg-color: #0d0d0d;
+            --main-color: #00ff00; /* Neon Green */
+            --danger-color: #ff3333;
+            --text-color: #ffffff;
+            --header-bg: #1a1a1a;
+            --border-color: #006600;
+        }
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            border: 2px solid var(--border-color);
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        header {
+            background-color: var(--header-bg);
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8em;
+            color: var(--main-color);
+            text-shadow: 0 0 5px var(--main-color);
+            margin: 0;
+        }
+
+        .input-section, .log-section, .info-section {
+            padding: 20px;
+        }
+
+        .input-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: flex-end;
+            background-color: #1a1a1a;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            min-width: 200px;
+        }
+
+        label {
+            font-size: 0.8em;
+            color: #ccc;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], select {
+            padding: 10px;
+            border: 1px solid var(--main-color);
+            background-color: #000;
+            color: var(--main-color);
+            font-family: 'Roboto Mono', monospace;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: var(--main-color);
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #00e600;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85em;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+
+        th {
+            background-color: #2a2a2a;
+            color: var(--main-color);
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        td {
+            color: var(--text-color);
+        }
+
+        .status-paid { color: var(--main-color); font-weight: bold; }
+        .status-incident { color: var(--danger-color); font-weight: bold; }
+        .status-working { color: #ffcc00; }
+        .commission { color: #00ccff; font-weight: bold; }
+
+        .info-section {
+            background-color: #1a1a1a;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .info-section h3 {
+            color: var(--main-color);
+            border-bottom: 1px dashed #333;
+            padding-bottom: 5px;
+        }
+
+        .info-section p, .info-section li {
+            font-size: 0.8em;
+            color: #ccc;
+            margin: 5px 0;
+        }
+
+        .risks-list {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .links-area {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .links-area a, .links-area span {
+            color: var(--main-color);
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>CURE FOR DEATH DEBT COLLECTION SYSTEM - VOLUNTEER PORTAL</h1>
+        <p style="font-size: 0.9em; color: #aaa;">INVOICING ALL BILLIONAIRE'S FOR US$1 MILLION | **5% COMMISSION**</p>
+    </header>
+
+    <div class="input-section">
+        <div class="input-group">
+            <label for="qcCode">QC CODE (FROM QC CODE APP)</label>
+            <input type="text" id="qcCode" placeholder="Enter Your QC Code (e.g., J8abcdEFG...)" required>
+        </div>
+        <div class="input-group">
+            <label for="targetName">TARGET NAME/REFERENCE</label>
+            <input type="text" id="targetName" placeholder="e.g., Mackenzie Scott / Bill Gates" required>
+        </div>
+        <div class="input-group">
+            <label for="targetTier">TARGET TIER</label>
+            <select id="targetTier">
+                <option value="Billionaire">Billionaire (US$1M Invoice)</option>
+                <option value="Millionaire">Millionaire (US$100K Invoice)</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <button onclick="logCase()">PRESS TO LOG INVOICE LOG SCAN REF</button>
+        </div>
+    </div>
+
+    <div class="log-section">
+        <h2>Active Collection Cases</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Invoice Ref</th>
+                    <th>Collector (QC Code)</th>
+                    <th>Target</th>
+                    <th>Invoice Amount</th>
+                    <th>Commission (5%)</th>
+                    <th>Start Date</th>
+                    <th>Status</th>
+                    <th>Incident Log</th>
+                </tr>
+            </thead>
+            <tbody id="caseLogBody">
+                <tr>
+                    <td>TWO-20250802-0016</td>
+                    <td>AGT8000_J0X</td>
+                    <td>Mackenzie Scott (Billionaire)</td>
+                    <td>US$1,000,000.00</td>
+                    <td class="commission">US$50,000.00</td>
+                    <td>07/11/25 16:30</td>
+                    <td class="status-working">Working</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="info-section">
+        <h3>System Protocols & Risk Mitigation</h3>
+
+        <p>⚠️ **Mandatory Security:** Secure your life by buying the **8000AGT for US$100** to mitigate collection risks.</p>
+
+        <ul class="risks-list">
+            <li>**Risk 1: Death Threat** - If you have the 8000AGT, simply state: "I have the AGT I don't die."</li>
+            <li>**Risk 2: Physical Attack** - Keep distance. Use the **AugVT Communication system** (or normal phones). If threatened, drop the case or assign another person. *(Note: AugVT GitHub Link Placeholder)*</li>
+            <li>**Risk 3: Banned/Blocked** - Drop the chase immediately and try another target or assign another person.</li>
+        </ul>
+
+        <div class="links-area">
+            <span>🌐 **Websites:** </span>
+            <a href="https://bitcoinayt.world" target="_blank">bitcoinayt.world</a> |
+            <a href="https://www.twofuture.world" target="_blank">twofuture.world</a> |
+            <a href="https://agt8000.life" target="_blank">agt8000.life</a>
+            
+            <span>📧 **Contacts:** </span>
+            <span style="color:#fff;">btcyt@bitcoinayt.world</span> |
+            <span style="color:#fff;">davidgomadza@hotmail.com</span> |
+            <span style="color:#fff;">00447719210295</span>
+        </div>
+    </div>
+</div>
+
+<script>
+    function logCase() {
+        const qcCode = document.getElementById('qcCode').value.trim();
+        const targetName = document.getElementById('targetName').value.trim();
+        const targetTier = document.getElementById('targetTier').value;
+        const caseLogBody = document.getElementById('caseLogBody');
+
+        if (!qcCode || !targetName) {
+            alert("Please enter a QC Code and Target Name.");
+            return;
+        }
+
+        // Determine invoice amount and commission based on tier
+        let invoiceAmount, commissionAmount;
+        if (targetTier === 'Billionaire') {
+            invoiceAmount = 1000000;
+            commissionAmount = 50000; // 5% of $1,000,000
+        } else {
+            invoiceAmount = 100000;
+            commissionAmount = 5000; // 5% of $100,000
+        }
+
+        const now = new Date();
+        const startTime = now.toLocaleDateString('en-GB') + ' ' + now.toLocaleTimeString('en-GB');
+
+        // Generate a simple Invoice Ref (simulating a scan ref)
+        const invoiceRef = 'AGT-LOG-' + Math.floor(Math.random() * 100000).toString().padStart(5, '0');
+
+        // Create the new row
+        const newRow = caseLogBody.insertRow(0); // Insert at the top
+        
+        newRow.innerHTML = `
+            <td>${invoiceRef}</td>
+            <td>${qcCode}</td>
+            <td>${targetName} (${targetTier})</td>
+            <td>US$${invoiceAmount.toLocaleString('en-US')}.00</td>
+            <td class="commission">US$${commissionAmount.toLocaleString('en-US')}.00</td>
+            <td>${startTime}</td>
+            <td class="status-working">Working</td>
+            <td>New Case Assigned</td>
+        `;
+        
+        // Reset inputs
+        document.getElementById('targetName').value = '';
+        document.getElementById('targetTier').value = 'Billionaire';
+
+        alert(`Case ${invoiceRef} logged successfully for ${targetName}. Potential Commission: US$${commissionAmount.toLocaleString('en-US')}.00 (5%)`);
+    }
+</script>
+
+</body>
+</html>
